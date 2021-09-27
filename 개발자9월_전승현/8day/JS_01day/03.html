@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동적 데이터 타입</title>
+</head>
+<body>
+    <script>
+        //var는 재선언이 가능함.
+        //재선언 할 경우에 두번째에 쓴 var로 대체 됨. 기존에 할당된 값은 없어지기 때문에 주의.
+        var x;
+        var x = "123";
+            x = 2; //재대입하면 기존값 사라지고 재대입한 값을 최종적 출력.
+        var y = 1;
+        
+        //const는 상수(값이 변경되지 않음)
+        //한번 할당되면 값이 불변함. 재할당이 안됨.
+        const z = 3;
+
+        // let은 재선언 불가능
+        // let y; 
+        // let y2 = 1;
+
+        console.log("x");
+        console.log(x);
+        console.log(y);
+        console.log(z);
+    </script>
+</body>
+</html>

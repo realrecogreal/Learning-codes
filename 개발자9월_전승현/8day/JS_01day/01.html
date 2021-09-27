@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 출력</title>
+</head>
+<body>
+    
+    <h1 id="title"></h1>
+
+    <script src="test.js"></script>
+    <script>
+        //한줄 주석 처리
+        //모든 문자열은 "" 안에다가 입력하여야 한다.
+        var 안녕 = 123; // 저장공간에 할당한다. -> 변수 저장 공간으로 인식
+        alert("안녕하세요"); // 경고창으로 출력
+        window.alert(안녕);    
+
+        document.write('<q>안녕하세요</q>', "<br>");
+        console.log("안녕하세요2"); //콘솔창에 출력
+        
+        console.log("<q>안녕하세요3</q>"); //콘솔창에 출력
+        document.write('<q>안녕하세요1</q>');
+
+        document.getElementById("title").innerHTML = "안녕하삼";
+    </script>   
+</body>
+</html>

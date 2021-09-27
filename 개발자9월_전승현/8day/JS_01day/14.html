@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단항연산 ++, --</title>
+</head>
+<body>
+    <script>
+        var x = 2;
+            x = --x; //전치연산
+        console.log(x);
+        
+        var y = 3;
+            y = y++; //후치 연산
+        console.log(y);
+
+        var z = y + x;
+        console.log(z);
+    </script>
+</body>
+</html>

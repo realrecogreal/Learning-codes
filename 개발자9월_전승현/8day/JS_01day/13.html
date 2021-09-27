@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자 52p</title>
+</head>
+<body>
+    <p id = "test"></p>
+    <script>
+        var x = 3;
+        var y = "3";
+
+        document.getElementById("test").innerHTML = ( x == y ) + "<br>" + ( x === y );
+        // == 은 양쪽 데이터가 모양만 같으면 true임 , === 은 데이터 타입까지 같을때 씀
+        //&&는 양쪽이 모두 true여야 true가 나옴
+        // document.getElementById("test").innerHTML = x > 10 && y > 1;
+        //한쪽만 참이면 참임
+        // document.getElementById("test").innerHTML = x > 10 || y > 1;
+        // document.getElementById("test").innerHTML = x > 10 ^ y > 1;
+
+
+
+    </script>
+</body>
+</html>

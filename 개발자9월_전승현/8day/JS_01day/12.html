@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사칙연산 계산기</title>
+</head>
+<body>
+    <input type="text" id="num1" size="2">
+    <input type="text" id="num2" size="2">
+    <hr>
+    <button onclick="add()"> + </button>
+    <button onclick="sub()"> - </button>
+    <button onclick="mul()"> * </button>
+    <button onclick="div()"> / </button>
+
+    <hr>
+    <input type="text" id="result">
+
+
+    <script>
+        var text = "전역변수"
+        
+        function add(){
+            console.log("test");
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            console.log(num1, num2);
+
+            var total = Number(num1) + Number(num2);
+            document.getElementById("result").value = total;
+        }
+
+        function sub() {
+            console.log("test");
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            console.log(num1, num2);
+            
+            var total = Number(num1) - Number(num2);
+            document.getElementById("result").value = total;
+        }
+
+        function mul() {
+            console.log("test");
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            console.log(num1, num2);
+            
+            var total = Number(num1) * Number(num2);
+            document.getElementById("result").value = total;
+        }
+
+        function div() {
+            console.log("test");
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            console.log(num1, num2);
+            
+            var total = Number(num1) / Number(num2);
+            document.getElementById("result").value = total;
+        }
+    </script>
+</body>
+</html>
