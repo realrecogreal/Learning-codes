@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체를 만들어보자</title>
+</head>
+
+<body>
+    <script>
+        var today = new Date();
+
+        var nowYear = today.getFullYear();
+        console.log(nowYear);
+        var nowDate = today.getDay();
+
+        var xmas = new Date(nowYear, 12, 25);
+        var dday = xmas.getTime() - today.getTime();
+        var result = Math.ceil(dday / (60 * 1000 * 60 * 24));
+
+        document.write("xmas 까지" + result + "일 남았습니다.");
+
+        var birth = new Date(2022, 02, 22);
+        var dday1 = birth.getTime() - today.getTime();
+        var result1 = Math.ceil(dday1 / (60 * 1000 * 60 * 24));
+
+        document.write("<br>" + "생일 까지" + result1 + "일 남았습니다.");
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break</title>
+</head>
+<body>
+    <script>
+        var i;
+        // for ( i = 1 ; i < 100 ; i++ ) {
+        //     if ( i == 11) break; //10을 만나면 멈추기 때문에 10은 출력이 안됨.
+        //     document.write(i, "<br>");
+        // }
+
+        for ( i = 1 ; i <= 10 ; i++ ) {
+            if ( i % 2 == 0 ) continue; //조건이 참이면 출력하지 않고 다음 조건을 실행한다.(건너뛴다.)
+            document.write(i, "<br>");
+        }
+    </script>
+</body>
+</html>

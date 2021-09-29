@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문 예제</title>
+</head>
+<body>
+    <!-- 1~20짝수번째 숫자만 화면에 출력 -->
+    <script>
+        // for ( var i = 1 ; i <= 20 ; i++ ) {
+        //     if ( i % 2 == 0 ) {
+        //         document.write(i + " 는 짝수입니다.", "<br>");
+        //     }
+        // }
+
+        for ( var i = 1 ; i <= 20 ; i++ ) {
+            if ( i % 2 == 0 ) continue;
+                document.write(i + " 는 짝수입니다.", "<br>");
+        }
+    </script>
+</body>
+</html>

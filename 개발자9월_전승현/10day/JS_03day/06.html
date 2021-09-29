@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 100;
+        // do {
+        //     document.write(i + " Javascript", "<br>")
+        //     i--;
+        // } while ( i >= 50);
+
+        // do {
+        //     if ( i < 50 ) break;
+        //     document.write(i + " - javascript", "<br>");
+        //     i--;
+        // } while ( i > 0 )
+
+        // do {
+        //     if ( i % 2 != 0) {
+        //         document.write( i + " - javascript", "<br>" );
+        //     }
+        //     i--;
+        // } while ( i > 50 )
+
+        do {
+            i--;
+            if ( i % 2 == 0) continue; // 조건이 참이면 건너뛰기 다음으로 넘기기.
+            document.write( i + " - javascript", "<br>" );
+
+        } while ( i > 50 )
+    </script>
+</body>
+</html>

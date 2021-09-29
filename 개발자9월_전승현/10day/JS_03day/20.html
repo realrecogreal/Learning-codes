@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        var tv = new Object(); //tv 객체를 생성
+        tv.color = "black";
+        tv.size = "50inch";
+        tv.display = "QLED";
+        tv.price = "3,000,000";
+        tv.info = function () {
+            document.write(`tv의 컬러는 ${tv.color} 입니다.` + "<br>");
+            document.write(`tv의 가격은 ${tv.price} 입니다.` + "<br>");
+        }
+
+        tv.info();
+        
+        var car = {
+            color : "red",
+            price : 3000000,
+            info : function() {
+                document.write( `자동차 ${car.color}는 입니다.`, "<br>" );
+                document.write( `자동차 ${car.price}는 입니다.`, "<br>" );
+            }
+        }
+        car.info();
+
+    </script>
+</body>
+</html>
