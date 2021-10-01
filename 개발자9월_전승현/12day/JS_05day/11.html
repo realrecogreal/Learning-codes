@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function day( a, b, c ) {
+            return `오늘은 ${a}월 ${b}일 ${c}요일 입니다.`;
+            
+        }
+        console.log(day(10, 01, "수"));
+        document.write(day(10, 01, "수"), "<br>");
+
+        //사각형의 너비를 구하는 함수
+        var result = rec(3, 54);
+
+        function rec( w, h ) {
+            area = w * h;
+            return `사각형의 넓이는 ${area}입니다.`;
+        }
+        
+        document.write(result);
+    </script>
+</body>
+</html>

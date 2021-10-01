@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+</head>
+<body>
+    <script>
+        var rightId = "test";
+        var rightPwd = 1234;
+        function login( id, pwd ) {
+            // console.log(`아이디 : ${id}, 비밀번호 : ${pwd}`);
+            if (id == rightId) {
+                
+                if (pwd == rightPwd) {
+                    document.write(id + "님 방문을 환영합니다.");
+                } else {
+                    alert("비밀번호를 다시 입력하세요.");
+                }
+            } else {
+                alert("아이디를 다시 입력하세요.");
+            }
+            location.reload();
+        }
+        
+        var userId = prompt("아이디를 입력하세요.");
+        var userPwd = prompt("비밀번호를 입력하세요.");
+
+        login( userId, userPwd );
+    </script>
+</body>
+</html>

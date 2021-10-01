@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>과목의 평균값을 구하는 함수</title>
+</head>
+<body>
+    <script>
+        
+
+        function testAvg(arrName) {
+            sum = 0;
+            for ( i = 0; i < arrName.length; i++ ) {
+                sum += Number(prompt(arrName[i] + "점수는 ? ", "0"));
+            }
+            
+            return Math.ceil(sum / arrName.length);
+        }
+
+        var arrSubject = [ "국어", "영어", "수학", "과학" ];
+
+        var total = testAvg( arrSubject );
+        var arrData;
+        document.write(`${arrSubject.length} 과목 총점수의 평균은 ${total}`);
+        // testAvg();
+    </script>
+</body>
+</html>     

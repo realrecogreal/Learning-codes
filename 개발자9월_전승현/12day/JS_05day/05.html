@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-전자시계 만들기</title>
+    <style>
+        #time { border: 2px solid #ccc; padding: 30px; text-align: center; width: 500px; margin: 0 auto; background-color: rgb(216, 123, 123); color: #eee;}
+    </style>
+</head>
+<body>
+    <h1>JS시계</h1>
+    <h2 id = "time"></h2>
+    <script>
+        var show = document.getElementById("time");
+
+        function clock () {
+            var date = new Date();
+            
+            var clockMonth = date.getMonth() + 1;
+
+            var clockDate = date.getDate();
+                clockDate = clockDate < 10 ? "0" + clockDate : clockDate;
+
+            var week = [ "일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일" ];
+
+            var clockDay = date.getDay();
+                clockDay = week[clockDay];
+            // console.log(clockMonth, clockDate, clockDay);
+
+
+            var hours = date.getHours();
+                hours = hours < 10 ? "0" + hours : hours;
+
+            var min = date.getMinutes();
+                min = min < 10 ? "0" + min : min;
+
+            var sec = date.getSeconds();
+                sec = sec < 10 ? "0" + sec : sec;
+
+            console.log(hours, min, sec);
+
+            show.innerHTML = `${clockMonth}월 / ${clockDate}일 / ${clockDay} /` + `${hours} : ${min} : ${sec}`;
+        }
+
+        setInterval( clock, 1000 );
+
+        clock();
+    </script>
+</body>
+</html>

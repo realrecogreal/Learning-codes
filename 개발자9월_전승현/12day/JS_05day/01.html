@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 모든 데이터의 합을 구하기</title>
+</head>
+<body>
+    <script>
+        var num = [ 1, 3, 5, 7, 9 ];
+        var sum = 0;
+        
+        // for ( i = 0; i < num.length; i++ ) {
+        //     sum += num[i];
+        // }
+
+        num.forEach ( test );
+
+        function test ( x, i, a ) { //해당 함수가 실행할 때 꼭 필요한 데이터를 끌어올 때 사용함..
+            console.log( sum, x, i, a );
+            sum += x;
+        }
+
+        var testNum = Number("123");
+
+        document.write(sum);
+        document.write(testNum);
+        
+    </script>
+</body>
+</html>

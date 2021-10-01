@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+</head>
+<body>
+    <script>
+        var txt = "안녕하세요.";
+
+        function myName( name, age = 30, area = "캘리포니아" ) {
+            document.write(`${name}씨는 나이가 ${age}살이고  ${area}에 살고 있습니다. <br>`);
+        }
+
+        myName( "전승현", 26, "수원" );
+        myName( "유재석", 45, "서울" );
+        myName( "주커버그", 35, "미국" );
+        myName( "호날두" );
+        
+        
+    </script>
+</body>
+</html>
