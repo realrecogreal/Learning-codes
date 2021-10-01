@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배경컬러 - 배열의 순차적 출력</title>
+</head>
+<body id = "bgColor">
+    <button onclick="tgColor()">배경 칼라 변경</button>
+    <script>
+        
+        
+        // document.getElementById("bgColor").style.backgroundColor = "skyblue";
+        // document.getElementById("bgColor").style.backgroundColor = "red";
+        var bgColor = ["skyblue", "orange", "deeppink", "green"];
+        var i = 0;
+        function tgColor() {
+            for ( i = 0; i < bgColor.length; i++) {
+                
+                console.log(bgColor[i]);
+                
+                return document.getElementById("bgColor").style.backgroundColor = bgColor[i];
+
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>
