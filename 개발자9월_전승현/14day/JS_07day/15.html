@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성조작</title>
+</head>
+
+<body>
+    <h1>음식 리스트</h1>
+    <ul>
+        <li>짬뽕</li>
+        <li>라면</li>
+        <li>탕수육</li>
+        <li>볶음밥</li>
+        <li>육개장</li>
+    </ul>
+    <hr>
+    <button>타이틀변경</button>
+    <button>style변경</button>
+    <script>
+        var btn = document.getElementsByTagName("button")
+        var cgh = document.getElementsByTagName("h1");
+        var cgUl = document.getElementsByTagName("ul");
+        var liAll = document.getElementsByTagName("li");
+        btn[0].onclick = function () {
+            cgh[0].innerHTML = "점심";
+        };
+
+        btn[1].onclick = function () {
+            cgUl[0].style.backgroundColor = "yellow";
+            cgUl[0].style.border = "2px solid red";
+        };
+
+
+        for (var i = 0; i < liAll.length; i++) {
+            //자바스크립트로 조작하는 css는 인라인 레벨로 조작하는 것이다. - > 우선순위가 높음.
+            liAll[i].onclick = function () {
+                //모든 리스트를 초기화
+                for ( var j = 0; j < liAll.length; j++ ) {
+                    liAll[j].style.cssText = 
+                    //css 코드를 연달아서 작성이 가능하다.
+                    `font-size: 16px; font-weight: normal; color:#111;`;
+
+                };
+                this.style.cssText = 
+                `color: red; font-size: 24px; font-weight: bold;`;
+                
+
+            };
+
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회면 조작</title>
+</head>
+<body>
+    <h1 id="title">DOM 선택자</h1>
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis nemo recusandae tempore dicta laborum, exercitationem cum illum adipisci eveniet neque ea soluta velit ex eligendi officia sint quam voluptate error.</p>
+    <ul class="fru">
+        <!-- 버튼을 클릭시에 바나나텍스트가 파인애플로 바뀜 -->
+        <li class="item">바나나</li> 
+        <li class="item">키위</li>
+        <li class="item">수박</li>
+        <li class="item">복숭아</li>
+        <li class="item">체리</li>
+        <li class="item">멜론</li>
+        <li class="item">망고</li>
+    </ul>
+    <p>문단입니다.</p>
+    <hr>
+    <!-- 문단배경을 오렌지색으로 변경 -->
+    <button onclick="test1()">배경색 변경</button>
+    <!-- 바나나를 파인애플로 바꾸는 기능 -->
+    <button onclick="test2()">변경</button> 
+    <!-- 과일은 총 7개입니다. 멘트 출력 문단입니다p태그 멘트변경 -->
+    <button onclick="test3()">과일 개수 출력</button>
+    <!-- .text삭제  -->
+    <button onclick="test4()">문단삭제</button>
+    <button onclick="test5()">문단출력</button>
+    <script>
+        var text = document.getElementsByClassName("text");
+        var itemAll = document.querySelectorAll(".fru li");
+        var item = document.getElementsByClassName("item");
+        var pTag = document.getElementsByTagName("p")
+        
+        
+        function test1() {
+            text[0].style.backgroundColor = "orange";
+            title.style.backgroundColor = "deeppink";
+            title.style.textAlign = "center"; 
+        }
+        
+        function test2() {
+            item[0].innerHTML = "파인애플";
+            for ( var i = 0; i < itemAll.length; i++ ) {
+                itemAll[i].style.backgroundColor = "yellow";
+            }
+        }
+
+        function test3() {
+            pTag[1].innerHTML = "과일은 총7개입니다.";
+        }
+
+        function test4() {
+            text[0].style.display = "none";
+        }
+
+        function test5() {
+            text[0].style.display = "block";
+        }
+    </script>
+</body>
+</html>

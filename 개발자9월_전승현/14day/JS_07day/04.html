@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두수를 비교하여 큰 값을 출력</title>
+</head>
+<body>
+    <script>
+        sum();
+
+        function sum(num1, num2) {
+            var num1 =  Number(prompt("숫자1을 입력"));
+            var num2 = Number(prompt("숫자2를 입력"));
+            
+            if ( num1 > num2 ) {
+                document.write("num1이 큽니다." + num1);
+            } else if (num1 == num2 ) {
+                document.write("숫자가 같습니다.");
+            } else {
+                document.write("num2가 큽니다" + num2);
+            }
+        };
+
+    </script>
+    
+</body>
+</html>

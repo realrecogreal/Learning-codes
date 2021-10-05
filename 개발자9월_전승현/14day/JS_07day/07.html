@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            float: left;
+            margin: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var num = 0;
+        var sum = "";
+        var table = ""; //문자열로 바꿈
+
+        for (var i = 2; i <= 9; i++) {
+            table += "<table>";
+            table += "<caption>" + i + "단 </caption>";
+            table += "<tr><td>";
+            for (var j = 1; j <= 9; j++) {
+                sum = String(i * j);
+
+                if ( sum.indexOf("9") >= 0 ) {
+                    table += "<tr><td style='color:red'>";
+
+                } else if (sum.indexOf("6") >= 0 ) {
+                    table += "<tr><td style='color:blue'>";
+
+                } else {
+                    table += "<tr><td>";
+
+                }
+                
+                table += i + " x " + j + " = " + sum;
+                table += "</td></tr>";
+            }
+            table += "</table>";
+
+        }
+        document.write(table);
+
+        // function chFont() {
+        //     if ( sum.charAt == "9" ) {
+        //         var result = document.getElementById("ss")
+        //         result.style.color = "red";
+        //     } else if ( sum.charAt == "7" ) {
+
+
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
