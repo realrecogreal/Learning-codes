@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(154, 226, 121);
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        var box = document.getElementsByClassName("box");
+        // box[0].onclick = function () {
+        //     box[0].style.backgroundColor = "red";
+        //     box[0].style.borderRadius = "50%";
+
+        // }
+
+        for (var i = 0; i < box.length; i++) {
+
+            //초기화를 먼저 해놓으면 원래 상태로 돌릴 수 있다.
+            box[i].onclick = function () {
+                for (var j = 0; j < box.length; j++) {
+                    box[j].style.backgroundColor = "rgb(62, 156, 18)";
+                    box[j].style.borderRadius = "50%";
+                };
+
+                this.style.backgroundColor = "rgb(154, 226, 121)";
+                this.style.borderRadius = 0;
+
+
+            };
+            box[i].addEventListener("mouseover", function() {
+                this.style.backgroundColor = "yellow";
+                this.style.borderRadius = "50%"
+            });
+            box[i].addEventListener("mouseout", function() {
+                this.style.backgroundColor = "#cccc";
+                this.style.borderRadius = "0";
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>
