@@ -1,0 +1,14 @@
+10.07
+id를 querySelectorAll의 element로 쓸때는 id인표시 '#'을 붙여줘야한다.
+클래스는 .을 붙인다.
+
+event.preventDefault()
+이벤트를 취소할 수 있는 경우 이벤트의 전파를 막지 않고 그 이벤트를 취소합니다.
+
+sql자격증 원서 접수 : 10/25 ~ 10/29
+시험일 : 11/20  결과발표 : 12.17
+https://velog.io/@hyundong_kk/SQLD-%EC%9E%90%EA%B2%A9%EC%A6%9D
+https://velog.io/@zziwon/39%ED%9A%8C-SQLD-%ED%9B%84%EA%B8%B0
+
+
+자바자격증 시험 날짜 : 11/20
