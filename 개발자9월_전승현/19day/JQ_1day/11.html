@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            background-color: skyblue;
+            width: 100px;
+            height: 100px;
+            margin: 100px auto;
+            transition: transform 1s ease;
+        }
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            let rotate = 0;
+            $("button").filter(".play").click(function() {
+                rotate += 360;
+                $("#box").css({
+                    transform: "rotate("+ rotate + "deg)"
+                });
+            });
+            $("button").find("span").click(function() {
+                 let txt = $("#box").text();
+                 console.log(txt);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">box</div>
+    <button class="play">play</button>
+    <button><span>info</span></button>
+</body>
+</html>

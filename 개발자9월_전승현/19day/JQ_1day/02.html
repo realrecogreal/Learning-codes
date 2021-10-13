@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>제이쿼리 입력</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                alert("무야호");
+                console.log("안녕하세요.");
+                $("p").text("<q>안녕하세요.</q>"); //태그해석을 하지 않고 문자그대로를 출력함.
+                $("h1").html("<q>안뇽하세요.</q>"); //태그해석해서 출력함.
+                $("input").val("안녕하세요."); //value를 축약
+                
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+    <h1></h1>
+    <input type="text">
+    <button>입력</button>
+    <!-- 입력버튼 누르면  -->
+</body>
+</html>

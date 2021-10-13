@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>모바일 슬라이드 메뉴</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .toggle {
+            position: absolute;
+            right: 40px;
+            top: 20px;
+            width: 30px;
+        }
+
+        .toggle span {
+            background-color: #000;
+            height: 2px;
+            display: block;
+            margin: 7px 0;
+        }
+
+        .sidenav {
+            box-sizing: border-box;
+            width: 300px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 50px 20px;
+            margin-left: -400px;
+            transition: 1s;
+
+        }
+
+        .sidenav.on {
+            margin-left: 0;
+
+        }
+
+        .sidenav button {
+            float: right;
+        }
+
+        .sidenav ul {
+            margin-top: 50px;
+        }
+
+        .sidenav ul li {
+            line-height: 2;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $(".toggle").click(function () {
+                // if ($(".sidenav").hasClass("on") == "-400px") {
+                //     $(".sidenav").removeClass("on");
+
+                // } else {
+                //     $(".sidenav").addClass("on");
+
+                // }
+
+                $(".sidenav").toggleClass("on");
+
+            });
+
+            $("button").click(function () {
+                $(".sidenav").css("marginLeft", "-400px");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="sidenav">
+        <button>닫기 x</button>
+        <ul>
+            <li>Menu 01</li>
+            <li>Menu 02</li>
+            <li>Menu 03</li>
+        </ul>
+    </div>
+</body>
+
+</html>

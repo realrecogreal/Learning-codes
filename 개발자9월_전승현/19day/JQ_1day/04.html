@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>애니메이션 메소드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        #box {
+            width: 300px;
+            height: 100px;
+            border: 5px solid red;
+            background-color: yellow;
+            padding: 20px;
+            margin: 50px 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="box">box</div>
+    <button>hide</button>
+    <button>show</button>
+    <button>toggle</button>
+    <script>
+        $(document).ready(function () {
+            $("button").eq(0).click(function () {
+                // alert("버튼1");
+                $("#box").css("display", "none");
+            });
+            //부모(바디) 입장에서 자식 몇번째인지 물어보는 것이기 때문에 3임.(헷갈림)
+            $("button:nth-child(3)").click(function () {
+                // alert("버튼2");
+                $("#box").css("display", "block");
+
+            });
+            //인덱스번호를 입력하면 된다. nth-child보다 더 나음.
+            $("button:nth-of-type(3)").click(function () {
+                // alert("버튼3");
+                if ($("#box").css("display") == "block") {
+                    $("#box").css("display", "none");
+
+                } else {
+                    $("#box").css("display", "block");
+                };
+            });
+        });
+    </script>
+</body>
+
+</html>
