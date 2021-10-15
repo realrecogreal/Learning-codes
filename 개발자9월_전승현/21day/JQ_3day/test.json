@@ -1,0 +1,7 @@
+[
+    { "number": 1, "name": "기성용", "age": 34, "score": 98 },
+    { "number": 2, "name": "손흥민", "age": 30, "score": 100 },
+    { "number": 3, "name": "김민재", "age": 28, "score": 90 },
+    { "number": 4, "name": "박지성", "age": 37, "score": 99 },
+    { "number": 5, "name": "황희찬", "age": 26, "score": 92 }
+]

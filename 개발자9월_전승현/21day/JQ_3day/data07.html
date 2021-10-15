@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function () {
+            $("#newsWrap h2 a").on("click", function (e) {
+                e.preventDefault();
+                $(this).addClass("on").parent("h2").siblings("h2").children("a").removeClass("on");
+
+                $.ajax({
+                    url: "https://api.rss2json.com/v1/api.json",
+                    dataType: "json",
+                    data: {
+                        rss_url: $(this).attr("href"),
+                        count: 10
+                    },
+                    success: function (data) {
+                        console.log(data);
+
+                        let $newsBox = $("<ul class='newsList'>");
+                        $(".newsList").empty();
+                        $.each(data.items, function (index, value) {
+                            let newsList = $(
+                                "<li><span></span><a href='#'></a></li>");
+                            // newsList.find("a").attr("href", value.link);
+                            // newsList.find("a").attr("target", "_blank");
+                            newsList.find("a").attr({
+                                "href": value.link,
+                                "target": "_blank"
+                            });
+                            newsList.find("a").html(value.title);
+                            newsList.find("span").text(index + 1);
+
+                            $newsBox.append(newsList);
+                        });
+                        $("#newsWrap").append($newsBox);
+                    },
+                    error: function () {
+                        alert("실패함");
+                    }
+                });
+
+            });
+        });
+    </script>
+    <style>
+        /* 기본 세팅 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            font: 12px Malgun Gothic, "맑은고딕", gulim, "굴림", sans-serif;
+            color: #333;
+            padding-top: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+            outline: none;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 10px;
+            /* color: ; */
+        }
+
+        /* 탭 메뉴 디자인 */
+        #newsWrap {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #newsWrap li {
+            /* height: 25px; */
+            line-height: 2;
+            position: relative;
+        }
+
+        #newsWrap span {
+            position: absolute;
+            top: 0;
+            left: 3px;
+        }
+
+        #newsWrap li a {
+            display: block;
+            width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 30px;
+        }
+
+        #newsWrap h2 {
+            float: left;
+            padding-right: 3px;
+            margin-bottom: 10px;
+        }
+
+        #newsList {
+            clear: both;
+        }
+
+        /* 비활성화 탭 버튼 모양 */
+        #newsWrap h2 a {
+            display: inline-block;
+            padding: 8px 10px;
+            border: 1px solid #aaa;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            background: #ccc;
+        }
+
+        /* 활성화 탭 버튼 모양 */
+        #newsWrap h2 a.on {
+            background-color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>블로그 RSS</h1>
+    <div id="newsWrap">
+        <h2>
+            <!-- 초기에 첫 번째 버튼에만 class="on"이 포함되어 있다. -->
+            <a href="https://rss.blog.naver.com/dksgywls07.xml" class="on">헬창로그</a>
+        </h2>
+        <h2>
+            <a href="https://rss.blog.naver.com/xxsuxxb.xml">음악추천</a>
+        </h2>
+        <h2>
+            <a href="https://rss.blog.naver.com/okjoa012.xml">영화리뷰</a>
+        </h2>
+        <br>
+        <br>
+        <br>
+        <!-- <ul id="newsList"></ul> -->
+    </div>
+</body>
+
+</html>

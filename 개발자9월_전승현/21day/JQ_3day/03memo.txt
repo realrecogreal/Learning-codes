@@ -1,0 +1,2 @@
+Rss xml파일 json으로 변환법
+https://cafe.naver.com/webfront02?iframe_url=/MyCafeIntro.nhn%3Fclubid=30533435

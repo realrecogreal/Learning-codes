@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DATA .load()</title>
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".news1").load("data/news.html #news_1");
+            $(".news2").load("data/news.html #news_2");
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- ${"요소선택"}.load(url, data, 콜백함수)
+    ${"#abc"}.load("naver_news.html") -->
+
+    <h1>load 1</h1>
+    <div class="news1">
+
+    </div>
+
+    <h1>load 2</h1>
+    <div class="news2">
+
+    </div>
+
+</body>
+
+</html>

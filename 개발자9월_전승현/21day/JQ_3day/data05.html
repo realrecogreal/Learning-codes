@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>json 데이터 문자열 누적출력</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 0 auto;
+        }
+        th {
+            background-color: rgba(69, 100, 37);
+            color: #fff;
+            padding: 10px;
+        }
+        th, td {
+            border: 2px solid #aaa;
+            padding: 5px;
+            text-align: center;
+        }
+        table tr th:nth-child(1) {
+            width: 10%;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("button").click(function() {
+                $.ajax({
+                    url: "test.json",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log(data);
+                        let tbody = "";//문자열 누적연산을 위한 빈 문자열 선언(초기값)
+                        $.each(data, function(index, value) {
+                            tbody += "<tr>";
+                            tbody += "<td>" + value.number + "</td>";
+                            tbody += "<td>" + value.name + "</td>";
+                            tbody += "<td>" + value.age + "</td>";
+                            tbody += "<td>" + value.score+ "</td>";
+                            tbody += "</tr>";
+                            
+                        });
+                        $("tbody").append(tbody);
+                    },
+                    error: function() {
+                        alert("데이터 연동 실패");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>!점수 출력!</button>
+    <table>
+        <caption>시험점수 출력 테이블</caption>
+        <thead>
+            <tr>
+                <th>num</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>점수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 실제 데이터가 연동되어 출력되는 부분 -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"> 우리반 점수 출력.끝!</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
