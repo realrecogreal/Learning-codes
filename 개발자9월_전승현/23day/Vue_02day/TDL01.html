@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TDL-오늘할 일 작성</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        #app {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        #inBox {
+            width: 380px;
+            border: 2px solid skyblue;
+            outline: none;
+            font-size: 20px;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+
+        .addBtn {
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 10px;
+            background-color: skyblue;
+            color: blue;
+            border: none;
+            outline: none;
+        }
+
+        .olist {
+            padding: 0;
+        }
+
+        .olist li {
+            line-height: 2;
+            font-size: 20px;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            list-style-position: inside;
+        }
+
+        .olist li button {
+            margin: 5px 2px 0;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: orange;
+            color: #fff;
+            border: none;
+            outline: none;
+            float: right;
+        }
+
+        .title {
+            text-align: center;
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="title">{{ title }}</h1>
+        <span>
+            <!-- v-bind는 생략이 가능하다 :만 쓰면됨 -->
+            <!-- v-on은 생략이 가능하다 @만 쓰면됨 -->
+            <input type="text" :id="idName" v-model="todo">
+            <input type="submit" value="등록" :class="classBtn" @click="addTodo">
+        </span>
+        <ol :class="classList">
+            <li v-for="(todo, idx)in todos">
+                {{ todo }} <button @click="delTodo">X 삭제</button>
+            </li>
+        </ol>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                title: "오늘의 할일 목록!",
+                idName: "inBox",
+                classBtn: "addBtn",
+                classList: "olist",
+                todo: "", //인풋박스에 입력된 글을 가져오는 변수
+                todos: [], //사람들이 등록한 글을 배열로 등록하는 변수
+                flad: false
+
+            },
+            methods: {
+                //두가지 함수등록 방법이 있는데 두개 어느것을 써도 같음.
+                addTodo() {
+                    if( this.todo !== "" ) {
+                        this.todos.push(this.todo);
+                        this.todo = "";
+                        // console.log(this.todos);
+                    }
+                },
+
+                delTodo: function(idx) {
+                    // console.log(idx);
+                    this.todos.splice(idx, 1);
+                    
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
